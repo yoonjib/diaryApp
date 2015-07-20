@@ -7,3 +7,10 @@
 meteor-platform
 autopublish
 insecure
+accounts-password
+iron:router
+ian:accounts-ui-bootstrap-3
+twbs:bootstrap
+accounts-facebook
+accounts-twitter
+accounts-ui-unstyled
