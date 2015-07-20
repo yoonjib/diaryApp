@@ -1,6 +1,6 @@
 Template.loginPage.events({
 
-  'submit #login-form' : function(e,t){
+  'click .js-signin' : function(e,t){
     e.preventDefault();
 
     var email = t.find('#login-email').value
@@ -9,14 +9,19 @@ Template.loginPage.events({
 
     Meteor.loginWithPassword(email, password, function(err){
       if(err){
-
+        console.log(err);
       }
 
       else{
-        Router.go('diary');
+        Router.go('/myDiary');
       }
 
     });
     return false;
+  },
+
+  'click .js-register': function(){
+    Router.go('/myDiary');
   }
-})
+
+});
