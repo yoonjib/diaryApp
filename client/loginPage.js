@@ -21,7 +21,7 @@ Template.loginPage.events({
   },
 
   'click .js-register': function(){
-    Router.go('/myDiary');
+    Router.go('/register');
   }
 
 });
