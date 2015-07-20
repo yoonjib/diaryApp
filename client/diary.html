@@ -4,6 +4,9 @@
 	<div class="navbar navbar-static-top">
 		<div class="navbar-inner">
 			<a class="brand" href="#">DailySecret</a>
+            {{#if currentUser}}
+            <button type="button" class="logout btn btn-default navbar-btn navbar-right">Log out</button>
+            {{/if}}
 		</div>
 	</div>
 		{{>diarys}}
