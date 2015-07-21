@@ -38,6 +38,10 @@ Template.listitem.events({
 	},
 
 	'click .removelist':function(e,t){
-		Diarys.remove({_id:this._id});
+		var result = confirm("Want to delete?");
+		if (result) {
+  			Diarys.remove({_id:this._id});
+		}
+		
 	}
 })
