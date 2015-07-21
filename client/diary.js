@@ -20,6 +20,8 @@ Template.diary.events({
 		}
 
 		Meteor.call('submitPost',title,body, currentUserId);
+
+		$('#diaryForm').trigger("reset");
 		//Lists.insert({title:title});
 	},
 
