@@ -4,6 +4,21 @@ Template.diary.events({
 		var currentUserId= Meteor.userId();
 		var title= $('#diaryTitle').val();
 		var body= $('#diaryBody').val();
+		if(title==''){
+			alert('Please enter title');
+			return false;
+		}
+
+		if(body==''){
+			alert('Please enter your story :)');
+			return false;
+		}
+
+		if(title=='' && body=''){
+			alert('Please enter your title and your story :)');
+			return false;
+		}
+
 		Meteor.call('submitPost',title,body, currentUserId);
 		//Lists.insert({title:title});
 	},
