@@ -38,7 +38,7 @@ Template.listDiarys.diarys = function(){
 	return Diarys.find({userId: Meteor.userId()});
 }
 
-Template.diarys.titleLists=function(){
+Template.displayDiary.titleLists=function(){
 	return Diarys.find({_id:Session.get('listid')});
 }
 
@@ -62,3 +62,9 @@ Template.listitem.events({
 		
 	}
 })
+
+Template.displayDiary.events({
+	'click .edit': function(){
+
+	}
+});

@@ -10,24 +10,35 @@
 		</div>
 	</div>
 
-    <div class="span2">
-                <p>{{>listDiarys}}</p>
-    </div>
-    
-        <div class ="row">
+    <div class="container-fluid">
+        <div class="row-fluid">
             <div class="span2">
-                <p>{{>diarys}}</p>
+                <p>{{>listDiarys}}</p>
             </div>
-		</div>
+
+            <div class="span8">
+                <p>{{>diarys}}</p>
+                
+            </div>
+        </div>
+    </div>    
+         
 
 	</body>
 </template>
 
 
 <template name="diarys">
-    <div class="row">
+      <div class="row">
         <div class="container">
+
             <form class="form-horizontal" id="diaryForm">
+                <div class="form-group">
+                    <label for="inputTitle" class="col-sm-2 control-label">In your diary</label>
+                    <div class="col-sm-10">
+                       <p>{{>displayDiary}}</p>
+                    </div>
+                </div>
                 <div class="form-group">
                     <label for="inputTitle" class="col-sm-2 control-label">Title</label>
                     <div class="col-sm-10">
@@ -35,7 +46,12 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-2 control-label">Body</label>
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div id="time"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputBody" class="col-sm-2 control-label">Body</label>
                     <div class="col-sm-10">
                         <textarea id="diaryBody" class="form-control" rows="3"></textarea>
                     </div>
@@ -49,14 +65,42 @@
             </form>
         </div>
     </div>
-  
-        {{#each titleLists}}
-            <p>Title: {{title}}</p>
-            <p>Body: {{body}}</p>
-        {{/each}}
+
+    <script>
+      var myVar=setInterval(function(){currentTime()},1000);
+
+      function currentTime(){
+              var d = new Date();
+                h=d.getHours().toString();
+                m=d.getMinutes().toString();
+                s=d.getSeconds().toString();
+                date=d.getDate().toString();
+                month= d.getMonth()+1;
+                day=d.getDay().toString();
+                year=d.getFullYear().toString();
+
+                console.log(month);
+                console.log(year);
+
+                document.getElementById("time").innerHTML=date+"/"+month+"/"+year+" "+h+":"+m+":"+s;
+
+      }
+  </script>
 
     
 </template>
+
+<template name="displayDiary">
+
+                {{#each titleLists}}
+                    <p>Title: {{title}}</p>
+                    <p>Created At: {{createdAt}}</p>
+                    <p>Body: {{body}}</p>
+                {{/each}}
+            
+      
+</template>
+
 
 
 <template name="listDiarys">
