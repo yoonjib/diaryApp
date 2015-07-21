@@ -7,9 +7,9 @@ Template.loginPage.events({
       , password = t.find('#login-password').value;
 
 
-    Meteor.loginWithPassword(email, password, function(err){
+    Meteor.loginWithPassword(email, password, function(err, reason){
       if(err){
-        console.log(err);
+        alert("Please double check your password and id");
       }
 
       else{

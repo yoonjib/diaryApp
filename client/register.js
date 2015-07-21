@@ -8,7 +8,7 @@
 
       Accounts.createUser({email: email, password : password}, function(err){
           if (err) {
-            // Inform the user that account creation failed
+            alert("Double check your email: email is empty/ already existed !");
           } else {
             Router.go('/');
           }
