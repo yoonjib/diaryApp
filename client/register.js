@@ -16,5 +16,9 @@
         });
 
       return false;
+    },
+
+    'click .js-signin':function(){
+      Router.go('/');
     }
   });
