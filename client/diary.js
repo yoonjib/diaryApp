@@ -14,7 +14,7 @@ Template.diary.events({
 			return false;
 		}
 
-		if(title=='' && body=''){
+		if(title=='' && body==''){
 			alert('Please enter your title and your story :)');
 			return false;
 		}

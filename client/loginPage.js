@@ -24,22 +24,9 @@ Template.loginPage.events({
     Router.go('/register');
   },
 
-  'click .js-fblogin' : function(){
-    ServiceConfiguration.configurations.update(
-      { service: "facebook" },
-      {
-        $set: {
-        appId: "406671079537309",
-        loginStyle: "popup",
-        secret: "6bfbf7f94e7dd385ae776c82d49f1e98"
-        }
-      },
-      {upsert: true}
-    );
-
-    Meteor.loginWithFacebook({
-      requestPermissions: ['user', 'public_repo']
-    }, function (err) {
+  'click .js-fblogin' : function(e){
+   
+    Meteor.loginWithFacebook({}, function (err) {
       if (err){
         Session.set('errorMessage', err.reason || 'Unknown error');
         console.log(err);  
@@ -48,4 +35,5 @@ Template.loginPage.events({
     console.log("clicked");
   }
 
+  
 });
