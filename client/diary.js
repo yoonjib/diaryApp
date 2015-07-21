@@ -8,11 +8,12 @@ Template.diary.events({
 		//Lists.insert({title:title});
 	},
 
+
 	'click .logout': function(evt){
 		evt.preventDefault();
 		Meteor.logout();
 		Router.go('/');
-	},
+	}
 
 });
 
@@ -20,18 +21,14 @@ Template.listDiarys.diarys = function(){
 	return Diarys.find({userId: Meteor.userId()});
 }
 
-/*Template.listDiarys.events({
-	'keyup .title': function(evt,t){
-		if(evt.which ===13){ //when you enter 
-			var title = t.find('.title').value;
-			Lists.insert({title:title}); //put the name in the list in database
-		}
-	}
-});*/
+Template.diarys.titleLists=function(){
+	return Diarys.find({_id:Session.get('listid')});
+}
 
-//Whenever someone calls out a list, we want to return that file
-/*Template.listDiarys.lists=function(){
-	return Lists.find();
+/*Template.diary.list=function(){
+	console.log('listid');
+	return Diarys.findOne({_id:Session.get('listid')});
+	return Diarys.find({listid:Session.get('listid')});
 }*/
 
 //If someone clicks the list, it returns the id of the list.
