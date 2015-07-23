@@ -1,51 +1,42 @@
-<template name = "loginPage">
-<link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
+<template name="loginPage">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
 
-<body>
-<div class="middlePage">
-<div class="page-header">
-  <h1 class="logo">DailySecret <small>Writing Diary App</small></h1>
-</div>
+    <body>
+        <div class="middlePage">
+            <div class="page-header">
+                <h1 class="logo">DailySecret <small>Writing Diary App</small></h1>
+            </div>
 
-<div class="panel panel-info">
-  <div class="panel-heading">
-    <h3 class="panel-title">Please Log In</h3>
-  </div>
-  <div class="panel-body">
-  
-  <div class="row">
-  
-<!--<div class="col-md-5" >
-<a href="#"><img src="http://techulus.com/buttons/fb.png" /></a><br/>
-<a href="#"><img src="http://techulus.com/buttons/tw.png" /></a><br/>
-<a href="#"><img src="http://techulus.com/buttons/gplus.png" /></a>
-</div>-->
-	
-    <div class="col-md-7" style="border-left:1px solid #ccc;height:160px">
-<form class="form-horizontal" id="login-form" action="action">
-<fieldset>
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Please Log In</h3>
+                </div>
+                <div class="panel-body">
 
-  <input name="textinput" type="email" id="login-email" placeholder="Enter Email" class="form-control input-md"> <p></p>
-  <input name="textinput" type="password" id="login-password" placeholder="Enter Password" class="form-control input-md"><p></p>
-  <!--<div class="spacing"><a href="#"><small> Forgot Password?</small></a><br/></div>-->
-  <!-- <button id="singlebutton" name="singlebutton" class="btn btn-info btn-sm pull-right">Sign In</button>-->
-  <button id="signin" class="js-signin btn btn-sm btn-success">Log in</button>
+                    <div class="row">
 
+                        <div class="col-md-7" style="border-left:1px solid #ccc;height:160px">
+                            <form class="form-horizontal" id="login-form" action="action">
+                                <fieldset>
 
+                                    <input name="textinput" type="email" id="login-email" placeholder="Enter Email" class="form-control input-md">
+                                    <p></p>
+                                    <input name="textinput" type="password" id="login-password" placeholder="Enter Password" class="form-control input-md">
+                                    <p></p>
+                                    <button id="signin" class="js-signin btn btn-sm btn-success">Log in</button>
+                                </fieldset>
+                            </form>
+                            <button id="register" class="js-register btn btn-sm btn-info">Register</button>
+                            <button id="facebookLogin" class="js-fblogin btn btn-sm btn-info">Facebook log in</button>
+                        </div>
 
-</fieldset>
-</form>
-  <button id="register" class="js-register btn btn-sm btn-info">Register</button>
-  <button id="facebookLogin" class="js-fblogin btn btn-sm btn-info">Facebook log in</button>
-</div>
-    
-</div>
-    
-</div>
-</div>
+                    </div>
 
-<p><a href="https://github.com/yoonjib">About</a> · Yoonji</p>
+                </div>
+            </div>
 
-</div>
-</body>
+            <p><a href="https://github.com/yoonjib">About</a> · Yoonji</p>
+
+        </div>
+    </body>
 </template>

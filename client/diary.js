@@ -62,9 +62,3 @@ Template.listitem.events({
 		
 	}
 })
-
-Template.displayDiary.events({
-	'click .edit': function(){
-
-	}
-});

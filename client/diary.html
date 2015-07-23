@@ -1,42 +1,42 @@
-<template name= "diary">
+<template name="diary">
 
-	<body>
-	<div class="navbar navbar-static-top">
-		<div class="navbar-inner">
-			<a class="brand" href="#">DailySecret</a>
-            {{#if currentUser}}
-            <button type="button" class="logout btn btn-default navbar-btn navbar-right">Log out</button>
-            {{/if}}
-		</div>
-	</div>
-
-    <div class="container-fluid">
-        <div class="row-fluid">
-            <div class="span2">
-                <p>{{>listDiarys}}</p>
-            </div>
-
-            <div class="span8">
-                <p>{{>diarys}}</p>
-                
+    <body>
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <a class="brand" href="#">DailySecret</a> 
+                {{#if currentUser}}
+                <button type="button" class="logout btn btn-default navbar-btn navbar-right">Log out</button>
+                {{/if}}
             </div>
         </div>
-    </div>    
-         
 
-	</body>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span2">
+                    <p>{{>listDiarys}}</p>
+                </div>
+
+                <div class="span8">
+                    <p>{{>diarys}}</p>
+
+                </div>
+            </div>
+        </div>
+
+
+    </body>
 </template>
 
 
 <template name="diarys">
-      <div class="row">
+    <div class="row">
         <div class="container">
 
             <form class="form-horizontal" id="diaryForm">
                 <div class="form-group">
                     <label for="inputTitle" class="col-sm-2 control-label">In your diary</label>
                     <div class="col-sm-10">
-                       <p>{{>displayDiary}}</p>
+                        <p>{{>displayDiary}}</p>
                     </div>
                 </div>
                 <div class="form-group">
@@ -56,7 +56,7 @@
                         <textarea id="diaryBody" class="form-control" rows="3"></textarea>
                     </div>
                 </div>
-      
+
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
                         <button type="submit" class="btn btn-default">Submit Diary</button>
@@ -67,45 +67,47 @@
     </div>
 
     <script>
-      var myVar=setInterval(function(){currentTime()},1000);
+        var myVar = setInterval(function() {
+            currentTime()
+        }, 1000);
 
-      function currentTime(){
-              var d = new Date();
-                h=d.getHours().toString();
-                m=d.getMinutes().toString();
-                s=d.getSeconds().toString();
-                date=d.getDate().toString();
-                month= d.getMonth()+1;
-                day=d.getDay().toString();
-                year=d.getFullYear().toString();
+        function currentTime() {
+            var d = new Date();
+            h = d.getHours().toString();
+            m = d.getMinutes().toString();
+            s = d.getSeconds().toString();
+            date = d.getDate().toString();
+            month = d.getMonth() + 1;
+            day = d.getDay().toString();
+            year = d.getFullYear().toString();
 
-                document.getElementById("time").innerHTML=date+"/"+month+"/"+year+" "+h+":"+m+":"+s;
+            document.getElementById("time").innerHTML = date + "/" + month + "/" + year + " " + h + ":" + m + ":" + s;
 
-      }
-  </script>
+        }
+    </script>
 
-    
+
 </template>
 
 <template name="displayDiary">
 
-                {{#each titleLists}}
-                    <p>Title: {{title}}</p>
-                    <p>Created At: {{createdAt}}</p>
-                    <p>Body: {{body}}</p>
-                {{/each}}
-            
-      
+    {{#each titleLists}}
+    <p>Title: {{title}}</p>
+    <p>Created At: {{createdAt}}</p>
+    <p>Body: {{body}}</p>
+    {{/each}}
+
+
 </template>
 
 
 
 <template name="listDiarys">
     <ul class="lists nav nav-pills nav-stacked">
-	{{#each diarys}}
-            {{>listitem}}
-	{{/each}}
-</ul>
+        {{#each diarys}} 
+            {{>listitem}} 
+        {{/each}}
+    </ul>
 </template>
 
 <template name="listitem">
