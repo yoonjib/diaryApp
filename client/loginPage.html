@@ -7,36 +7,69 @@
                 <h1 class="logo">DailySecret <small>Writing Diary App</small></h1>
             </div>
 
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Please Log In</h3>
-                </div>
-                <div class="panel-body">
-
-                    <div class="row">
-
-                        <div class="col-md-7" style="border-left:1px solid #ccc;height:160px">
-                            <form class="form-horizontal" id="login-form" action="action">
-                                <fieldset>
-
-                                    <input name="textinput" type="email" id="login-email" placeholder="Enter Email" class="form-control input-md">
-                                    <p></p>
-                                    <input name="textinput" type="password" id="login-password" placeholder="Enter Password" class="form-control input-md">
-                                    <p></p>
-                                    <button id="signin" class="js-signin btn btn-sm btn-success">Log in</button>
-                                </fieldset>
-                            </form>
-                            <button id="register" class="js-register btn btn-sm btn-info">Register</button>
-                            <button id="facebookLogin" class="js-fblogin btn btn-sm btn-info">Facebook log in</button>
-                        </div>
-
+                 <div class="login-box">
+                    <div class="lb-header">
+                      <a href="#" class="active" id="login-box-link">Login</a>
+                      <a href="#" id="signup-box-link">Sign Up</a>
                     </div>
-
-                </div>
-            </div>
+                    <div class="social-login">
+                      <a href="#">
+                        <i class="fa fa-facebook fa-lg" id="fblogin"></i>
+                        Login in with facebook
+                      </a>
+                     <!-- <a href="#">
+                        <i class="fa fa-google-plus fa-lg"></i>
+                        log in with Google
+                      </a>-->
+                    </div>
+                    <form class="email-login">
+                      <div class="u-form-group">
+                        <input type="email" id="login-email" placeholder="Email"/>
+                      </div>
+                      <div class="u-form-group">
+                        <input type="password" id="login-password" placeholder="Password"/>
+                      </div>
+                      <div class="u-form-group">
+                        <button id="signin" class="js-signin">Log in</button>
+                      </div>
+                      <div class="u-form-group">
+                        <a href="#" class="forgot-password">Forgot password?</a>
+                      </div>
+                    </form>
+                    <form class="email-signup">
+                      <div class="u-form-group">
+                        <input type="email" id="account-email"  placeholder="Email"/>
+                      </div>
+                      <div class="u-form-group">
+                        <input type="password" id="account-password" placeholder="Password"/>
+                      </div>
+                     <!-- <div class="u-form-group">
+                        <input type="password" placeholder="Confirm Password"/>
+                      </div> -->
+                      <div class="js-register u-form-group">
+                        <button>Sign Up</button>
+                      </div>
+                    </form>
+                  </div>
 
             <p><a href="https://github.com/yoonjib">About</a> · Yoonji</p>
 
         </div>
     </body>
+
+    <script>
+      $(".email-signup").hide();
+      $("#signup-box-link").click(function(){
+        $(".email-login").fadeOut(100);
+        $(".email-signup").delay(100).fadeIn(100);
+        $("#login-box-link").removeClass("active");
+        $("#signup-box-link").addClass("active");
+      });
+      $("#login-box-link").click(function(){
+        $(".email-login").delay(100).fadeIn(100);;
+        $(".email-signup").fadeOut(100);
+        $("#login-box-link").addClass("active");
+        $("#signup-box-link").removeClass("active");
+      });
+    </script>
 </template>
