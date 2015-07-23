@@ -9,15 +9,16 @@
 /*font-family: 'Raleway', sans-serif;
 /*}*/
 
-body{
-  background-color: #1cbb9b;
-}
+*{font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;}
+
+  /*background-color: #1cbb9b;*/
+
 .login-box{
   position:relative;
   margin: 10px auto;
   width: 500px;
   height: 400px;
-  background-color: #fff;
+  background-color: #F0F9FF;
   padding: 10px;
   border-radius: 3px;
   -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
@@ -37,7 +38,7 @@ box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
   margin: 0 25px;
   padding: 0 20px;
   text-decoration: none;
-  color: #666;
+  color: #00415d;
   font-weight: bold;
   font-size: 15px;
   -webkit-transition: all 0.1s linear;
@@ -132,7 +133,7 @@ box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
 }
 
  p {
-    color:#CCC;
+    color:#003300;
 }
 
 .spacing {
@@ -151,5 +152,5 @@ box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
 }
 
 .logo {
-    color:#CCC;
+    color:#003300;
  }   
